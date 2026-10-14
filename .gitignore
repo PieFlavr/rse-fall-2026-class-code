@@ -1,5 +1,7 @@
+# Editor conveniences
 .vscode/*
 
+# ROS ignores
 devel/
 logs/
 build/
