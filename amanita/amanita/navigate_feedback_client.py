@@ -5,14 +5,14 @@ from rclpy.node import Node
 from nav2_msgs.action import NavigateToPose
 
 
-class FibonacciActionClient(Node):
+class NavigateToPoseClient(Node):
 
     def __init__(self):
         super().__init__('fibonacci_action_client')
-        self._action_client = ActionClient(self, Fibonacci, 'fibonacci')
+        self._action_client = ActionClient(self, NavigateToPose, 'fibonacci')
 
     def send_goal(self, order):
-        goal_msg = Fibonacci.Goal()
+        goal_msg = NavigateToPose.Goal()
         goal_msg.order = order
 
         self._action_client.wait_for_server()
@@ -23,7 +23,7 @@ class FibonacciActionClient(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    action_client = FibonacciActionClient()
+    action_client = NavigateToPoseClient()
 
     future = action_client.send_goal(10)
 
