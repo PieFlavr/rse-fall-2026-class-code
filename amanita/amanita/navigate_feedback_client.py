@@ -2,7 +2,7 @@ import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
 
-from custom_action_interfaces.action import Fibonacci
+from nav2_msgs.action import NavigateToPose
 
 
 class FibonacciActionClient(Node):
