@@ -9,12 +9,13 @@ class NavigateToPoseClient(Node):
 
     def __init__(self):
         super().__init__('fibonacci_action_client')
-        self._action_client = ActionClient(self, NavigateToPose, 'fibonacci')
+        self._action_client = ActionClient(self, NavigateToPose, 'navigation')
 
     def send_goal(self, order):
         goal_msg = NavigateToPose.Goal()
-        goal_msg.order = order
+        goal_msg.pose = order
 
+        self.get_logger().info('Goal sent to NavigateToPose action server.')
         self._action_client.wait_for_server()
 
         return self._action_client.send_goal_async(goal_msg)
@@ -32,3 +33,5 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+
