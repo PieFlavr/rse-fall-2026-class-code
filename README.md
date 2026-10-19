@@ -9,3 +9,8 @@ colcon build --symlink-install
 source install/setup.bash 
 cd src/amanita
 ```
+
+```bash
+# turtlebot nav2 thingy
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
