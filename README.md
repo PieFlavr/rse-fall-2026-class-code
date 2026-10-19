@@ -12,5 +12,6 @@ cd src/amanita
 
 ```bash
 # turtlebot nav2 thingy
-ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+source /opt/ros/jazzy/setup.bash
+ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
 ```
