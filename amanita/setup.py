@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'navigate_feedback_client = amanita.navigate_feedback_client:main',
         ],
     },
 )
