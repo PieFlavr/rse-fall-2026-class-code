@@ -10,6 +10,8 @@ source install/setup.bash
 cd src/amanita
 ```
 
+From the [documentation here](https://docs.nav2.org/jazzy/getting_started/quickstart/quickstart/), the following can be used:
+
 ```bash
 # turtlebot nav2 thingy
 source /opt/ros/jazzy/setup.bash
