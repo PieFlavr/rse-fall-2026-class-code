@@ -19,6 +19,18 @@ ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
 ```
 
 ```bash
+# gazebo office launch
+export ROS_DOMAIN_ID=34
+ros2 launch rse_gazebo office.launch.py
+```
+
+```bash
+# gazebo warehouse launch
+export ROS_DOMAIN_ID=34
+ros2 launch rse_gazebo waraehouse.launch.py
+```
+
+```bash
 export ROS_DOMAIN_ID=34
 ros2 launch rse_perception perception.launch.py
 ```
