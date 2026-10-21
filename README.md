@@ -14,6 +14,11 @@ From the [documentation here](https://docs.nav2.org/jazzy/getting_started/quicks
 
 ```bash
 # turtlebot nav2 thingy
-source /opt/ros/jazzy/setup.bash
+export ROS_DOMAIN_ID=34
 ros2 launch nav2_bringup tb3_simulation_launch.py headless:=False
+```
+
+```bash
+export ROS_DOMAIN_ID=34
+ros2 launch rse_perception perception.launch.py
 ```
