@@ -141,6 +141,31 @@ class DetectionToMarker(Node):
         The cube lies in the tag's local XY plane. Keep its orientation.
         A lifetime of zero means it persists until deleted or overwritten.
         """
+        marker = Marker()
+
+        marker.header = transformed_pose.header # ???
+        marker.ns = 'detected_fiducials'
+        marker.id = 0
+
+        marker.type = Marker.CUBE
+        marker.action = Marker.ADD
+
+        marker.pose = transformed_pose.pose # ???
+
+        marker.scale.x = self.marker_size
+        marker.scale.y = self.marker_size
+        marker.scale.z = 0.02
+
+        marker.color.r = 0.1
+        marker.color.g = 0.9
+        marker.color.b = 0.2
+        marker.color.a = 1.0 # ???
+
+        marker.lifetime = Duration(seconds=self.marker_lifetime).to_msg()
+
+        return marker
+
+        
         return None  # Replace with a populated Marker.
 
 
