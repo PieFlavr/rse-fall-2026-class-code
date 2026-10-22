@@ -121,7 +121,8 @@ class DetectionToMarker(Node):
         or simply change frame_id. The timer retries unavailable transforms.
         """
         try:
-            return None  # Replace with the TF2 transform call.
+            return self.tf_buffer.transform(
+                detection, self.target_frame, timeout=Duration(seconds=0.0))
         except TransformException as error:
             self.get_logger().warning(
                 f'Waiting for transform: {error}', throttle_duration_sec=2.0)

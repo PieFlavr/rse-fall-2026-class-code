@@ -7,7 +7,6 @@ source /opt/ros/jazzy/setup.bash
 cd ~/Desktop/Gemini-Repository/CPE491-class/rse_ws
 colcon build --symlink-install
 source install/setup.bash 
-cd src/amanita
 ```
 
 ```bash
@@ -16,7 +15,6 @@ export ROS_DOMAIN_ID=34
 source /opt/ros/jazzy/setup.bash
 cd ~/Desktop/Gemini-Repository/CPE491-class/rse_ws
 source install/setup.bash 
-cd src/amanita
 ```
 
 From the [documentation here](https://docs.nav2.org/jazzy/getting_started/quickstart/quickstart/), the following can be used:
