@@ -93,6 +93,23 @@ class DetectionToMarker(Node):
         - Accept ages between 0.0 and self.max_detection_age seconds.
         - nanoseconds / 1e9 converts a duration to seconds.
         """
+        if not detection.header.frame_id:
+            return False
+
+        if detection.header.stamp == 0:
+            return False
+
+        measurment_time = Time.from_msg(
+            detection.header.stamp
+        )
+
+        age_seconds = (
+            self.get_clock().now() - measurment_time
+        ).nanoseconds / 1e9
+
+        if (0.0 <= age_seconds) and (age_seconds <= self.max_detection_age): # type: ignore
+            return True
+
         return False  # Replace this placeholder.
 
     def transform_to_target(self, detection):
